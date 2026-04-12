@@ -1,5 +1,7 @@
 package com.project.portfolio.service;
 
+import com.project.portfolio.dto.LoginRequest;
+import com.project.portfolio.dto.LoginResponce;
 import com.project.portfolio.dto.UsersRequest;
 import com.project.portfolio.dto.UsersResponce;
 import com.project.portfolio.model.Users;
@@ -18,4 +20,6 @@ public interface UsersService {
     UsersResponce updateUser(UsersRequest usersRequest, String id);
 
     String deleteUserById(String id);
+
+    LoginResponce login(LoginRequest loginRequest);
 }

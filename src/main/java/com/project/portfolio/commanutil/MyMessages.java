@@ -6,6 +6,8 @@ public final class MyMessages {
     public static final String USER_URL=API_URL+"/user";
     public static final String COMPANY_URL=API_URL+"/company";
     public static final String PROJECT_URL=API_URL+"/project";
+    public static final String ADMIN_URL=API_URL+"/admin";
+    public static final String AUTH_URL=API_URL+"/auth";
 
     public static final String USER_NAME_REQUIRED = "User Name Required";
 

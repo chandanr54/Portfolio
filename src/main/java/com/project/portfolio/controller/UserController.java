@@ -2,12 +2,19 @@ package com.project.portfolio.controller;
 
 
 import com.project.portfolio.commanutil.MyMessages;
+import com.project.portfolio.commanutil.Role;
+import com.project.portfolio.dto.LoginRequest;
+import com.project.portfolio.dto.LoginResponce;
 import com.project.portfolio.dto.UsersRequest;
 import com.project.portfolio.dto.UsersResponce;
 import com.project.portfolio.model.Users;
+import com.project.portfolio.security.JwtUtils;
 import com.project.portfolio.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +25,9 @@ import java.util.List;
 public class UserController {
 
             private final UsersService  usersService;
+
+            private String adminRole=Role.ADMIN.name();
+            private String userRole=Role.USER.name();
 
             @PostMapping
             public ResponseEntity<Users> createUser(@RequestBody UsersRequest  usersRequest) {
@@ -54,11 +64,15 @@ public class UserController {
                 return ResponseEntity.ok(users);
             }
 
+
+            @PreAuthorize("hasRole('ADMIN')")
             @DeleteMapping("/{id}")
             public String deleteUserById(@PathVariable("id") String id) {
 
                 return   usersService.deleteUserById(id);
             }
+
+
 
 
 
