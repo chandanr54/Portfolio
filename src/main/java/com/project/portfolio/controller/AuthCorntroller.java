@@ -45,10 +45,15 @@ public class AuthCorntroller {
     @PostMapping
     public ResponseEntity<Users> createUser(@RequestBody UsersRequest usersRequest) {
 
-        Users users=   usersService.createUser(usersRequest);
-        return ResponseEntity.ok(users);
+        //Users users=   usersService.createUser(usersRequest);
+        return ResponseEntity.ok(usersService.createUser(usersRequest));
 
     }
 
+
+    @GetMapping
+    public String test(){
+        return "Test" ;
+    }
 
 }
