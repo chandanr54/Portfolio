@@ -42,8 +42,8 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            docker stop spring-demo || true
-            docker rm spring-demo || true
+            docker stop spring-portfolio || true
+            docker rm spring-portfolio || true
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
             docker run -d -p 8080:8080 \
               --name spring-portfolio \
