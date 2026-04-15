@@ -51,9 +51,6 @@ public class AuthCorntroller {
     }
 
 
-    @GetMapping
-    public String test(){
-        return "Test" ;
-    }
+
 
 }

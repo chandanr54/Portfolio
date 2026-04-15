@@ -22,6 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping(MyMessages.USER_URL)
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class UserController {
 
             private final UsersService  usersService;

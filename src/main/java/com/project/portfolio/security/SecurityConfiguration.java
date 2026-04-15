@@ -37,9 +37,11 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorizeRequests ->
                                     authorizeRequests
                                             .requestMatchers(MyMessages.ADMIN_URL+"/**").hasRole("ADMIN")
-                                            .requestMatchers(MyMessages.USER_URL+"/**").hasRole("USER")
+                                           // .requestMatchers(MyMessages.USER_URL+"/**").hasRole("USER")
+                                            .requestMatchers(MyMessages.USER_URL+"/**").permitAll()
                                             .requestMatchers(MyMessages.AUTH_URL+"/**").permitAll()
-                                            .anyRequest().authenticated())
+                                            //.anyRequest().authenticated()
+                                            .anyRequest().permitAll())
                 .exceptionHandling(exceptionHandler ->exceptionHandler.
                             accessDeniedHandler(customAccessDeniedHandler));
 

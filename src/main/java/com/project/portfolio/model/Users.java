@@ -66,6 +66,10 @@ public class Users {
         @JsonIgnore
         private List<UserProjects> userProjects=new ArrayList<>();
 
+        @OneToMany(mappedBy = "users",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
+        @JsonIgnore
+        private List<Skills>   skills=new ArrayList<>();
+
     @CreationTimestamp
     private Date  createdDate;
     @UpdateTimestamp
