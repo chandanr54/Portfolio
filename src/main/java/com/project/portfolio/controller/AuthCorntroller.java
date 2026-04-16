@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(MyMessages.AUTH_URL)
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin("*")
 public class AuthCorntroller {
 
     private final UsersService usersService;

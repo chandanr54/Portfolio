@@ -30,6 +30,7 @@ public class UserProjectsResponce {
 
     private List<String> projectsTechnology;
     private String gitUrl;
+    //TODO: Adding project image filed
 
 
 //    private Users user;

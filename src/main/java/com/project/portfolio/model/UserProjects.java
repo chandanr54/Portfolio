@@ -33,6 +33,8 @@ public class UserProjects {
     private List<String> projectsTechnology;
     private String gitUrl;
 
+    //TODO: Adding project image filed
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id",
             nullable = false,

@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping(MyMessages.PROJECT_URL)
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class UserProjectController {
 
     private final UserProjectService userProjectService;

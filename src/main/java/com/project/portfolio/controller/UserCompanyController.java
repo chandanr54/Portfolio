@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping(MyMessages.COMPANY_URL)
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class UserCompanyController {
 
     private final UserCompanyService userCompanyService;
